@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+    <div  class=" bg-gradient-to-r from-slate-600 to-teal-400 flex items-center h-[100vh] justify-center ">
+        <div class="w-60 shadow-white shadow-sm md:w-80 h-auto p-2  bg-[#E56C3C]  rounded flex flex-col items-center justify-between">
+            <h1 class="text-[#773b25] text-lg font-medium ">Pakistan Standard Time</h1>
+            <div class="text-2xl md:text-6xl flex text-white items-center">
+                <span id="hour">00</span>
+                <span class="mx-2 md:text-4xl font-bold">:</span>
+                <span id="min"> 00</span>
+                <span class="mx-2 md:text-4xl font-bold">:</span>
+                <span id="sec"> 00</span>
+                <span class="text-xs md:text-lg pl-1" id="timeformat">PM</span>
+            </div>
+
+            <div class="text-sm md:text-lg font-medium text-[#773b25] pb-1" id="month">Friday, January 26, 2024</div>
+
+            <button id="btn" class="p-1 rounded-full md:p-2 text-white bg-gradient-to-r from-slate-600 to-blue-500">24 Hours Format</button>
+
+
+        </div>
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
