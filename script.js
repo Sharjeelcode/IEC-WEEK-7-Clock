@@ -3,7 +3,8 @@ let min = document.getElementById("min")
 let sec = document.getElementById("sec")
 let month = document.getElementById("month")
 let timeformat = document.getElementById("timeformat")
-let button = document.getElementById('btn')
+let format_button = document.getElementById('format-btn')
+let stop_button = document.getElementById("stop_button")
 
 let hourformat24 = false;
 
@@ -44,16 +45,27 @@ function updatetime() {
 }
 
 //calling function in setInterval
-setInterval(updatetime, 1000)
+let time = setInterval(updatetime,1000)
 
 //this button changes the time format
-button.addEventListener('click', ()=>{
+format_button.addEventListener('click', ()=>{
     hourformat24 = !hourformat24
     timeformat.classList.toggle("hidden")
-   if (button.innerHTML === "24 Hours Format") {
-    button.innerHTML = "12 Hours Format"
+   if (format_button.innerHTML === "24 Hours Format") {
+    format_button.innerHTML = "12 Hours Format"
    }else{
-   button.innerHTML = "24 Hours Format"}
+    format_button.innerHTML = "24 Hours Format"}
     updatetime()
 })
+// stop and start watch
 
+
+stop_button.addEventListener('click',()=>{
+    if(stop_button.innerHTML === "Stop watch"){
+        clearInterval(time)
+        stop_button.innerHTML = "Start watch"
+    }else if (stop_button.innerHTML === "Start watch") {
+        time = setInterval(updatetime, 1000)
+        stop_button.innerHTML = "Stop watch"
+    }
+});
